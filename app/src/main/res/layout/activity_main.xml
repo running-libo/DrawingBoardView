@@ -51,33 +51,17 @@
             android:background="@color/perpul"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/tv_clear"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:background="#FACD89"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp">
-
-        <TextView
-            android:id="@+id/tv_clear"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:background="#FACD89"
-            android:text="清除"/>
-
-        <TextView
-            android:id="@+id/tv_save"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:background="#FACD89"
-            android:layout_marginLeft="30dp"
-            android:text="保存"/>
-    </LinearLayout>
+        android:layout_marginBottom="40dp"
+        android:text="清除"/>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.drawingboardview;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,13 +26,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.tv_save).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         for (int i=0;i<llChooseColor.getChildCount();i++) {
             final int finalI = i;
             llChooseColor.getChildAt(i).setOnClickListener(new View.OnClickListener() {
@@ -41,5 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

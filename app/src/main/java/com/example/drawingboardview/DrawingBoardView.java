@@ -1,6 +1,7 @@
 package com.example.drawingboardview;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -94,6 +95,7 @@ public class DrawingBoardView extends View {
      * 设置画笔颜色
      */
     public void setPaintColor(int color) {
+        this.drawColor = color;
         paint.setColor(color);
         invalidate();
     }
@@ -104,5 +106,18 @@ public class DrawingBoardView extends View {
      */
     public void setDrawWidth(int drawWidth) {
         this.drawWidth = drawWidth;
+        paint.setStrokeWidth(drawWidth);
     }
+
+    /**
+     * 从view获取bitmap
+     * setDrawingCacheEnabled(true)  设置能否缓存图片信息
+     * buildDrawingCache()  如果能够缓存图片，则创建图片缓存
+     * getDrawingCache()  如果图片已经缓存，返回一个bitmap
+     * destroyDrawingCache() 释放缓存占用的资源
+     */
+    public Bitmap getPanelBitmap() {
+        return getDrawingCache();
+    }
+
 }
