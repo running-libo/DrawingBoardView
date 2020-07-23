@@ -20,7 +20,7 @@ public class DrawingBoardView extends View {
     /** 笔颜色 */
     private int drawColor = Color.BLACK;
     /** 笔粗细 */
-    private int drawWidth = 3;
+    private int drawWidth = 5;
     private Path path;
     /** 每次触碰画板时的横坐标 */
     private float downX;
@@ -80,5 +80,29 @@ public class DrawingBoardView extends View {
         super.onDraw(canvas);
 
         canvas.drawPath(path, paint);
+    }
+
+    /**
+     * 清空画布
+     */
+    public void clearPanel() {
+        path.reset();
+        invalidate();
+    }
+
+    /**
+     * 设置画笔颜色
+     */
+    public void setPaintColor(int color) {
+        paint.setColor(color);
+        invalidate();
+    }
+
+    /**
+     * 设置画笔粗细
+     * @param drawWidth
+     */
+    public void setDrawWidth(int drawWidth) {
+        this.drawWidth = drawWidth;
     }
 }
